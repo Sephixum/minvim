@@ -33,20 +33,47 @@ local function diagnostic_component()
   if counts.e > 0 then table.insert(parts, "E:" .. counts.e) end
   if counts.w > 0 then table.insert(parts, "W:" .. counts.w) end
 
-  if #parts == 0 then return "" end
+  if #parts == 0 then return "All Good :)" end
 
   return " " .. table.concat(parts, " ")
 end
 
+local cached_branch = ""
+local last_check    = 0
+
+-- @return string: Git status
+local function git_component()
+  local now = vim.loop.now()
+  if now - last_check > 10000 then
+    cached_branch = vim.fn.system("git branch --show-current 2> /dev/null"):gsub("\n", "")
+    last_check    = now
+  end
+
+  if cached_branch == "" then
+    return cached_branch
+  end
+
+  return " GIT " .. cached_branch -- Using the standard git icon
+end
+
 local M = {}
 function M.render()
+  local sep = " | "
   return table.concat({
     mode_component(),
+    sep,
+    git_component(),
+    sep,
     " %f %m%r",
+    sep,
     diagnostic_component(),
+    sep,
     "%=",
+    sep,
     " %y ",
+    sep,
     " %l:%c ",
+    sep,
     " %P "
   })
 end
