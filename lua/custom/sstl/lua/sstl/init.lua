@@ -50,10 +50,10 @@ local function git_component()
   end
 
   if cached_branch == "" then
-    return cached_branch
+    return "No Git"
   end
 
-  return " GIT " .. cached_branch -- Using the standard git icon
+  return " Git " .. cached_branch -- Using the standard git icon
 end
 
 local M = {}
