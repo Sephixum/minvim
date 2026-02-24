@@ -53,10 +53,11 @@ local function git_component()
     return "No Git"
   end
 
-  return " Git " .. cached_branch -- Using the standard git icon
+  return " Git " .. cached_branch
 end
 
 local M = {}
+
 function M.render()
   local sep = " | "
   return table.concat({
