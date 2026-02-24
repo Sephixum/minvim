@@ -1,5 +1,6 @@
 vim.o.laststatus = 3
 vim.o.number = true
+vim.o.clipboard = "unnamedplus"
 vim.o.relativenumber = true
 vim.o.wrap = false
 vim.o.tabstop = 4
