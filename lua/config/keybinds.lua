@@ -17,3 +17,7 @@ vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, get_opts("Lsp format"))
 
 vim.keymap.set("n", "<A-=>", ":vertical resize +2<CR>", get_opts("Window size +"))
 vim.keymap.set("n", "<A-->", ":vertical resize -2<CR>", get_opts("Window size -"))
+
+vim.keymap.set("i", "jk", "<ESC>", get_opts("Window size -"))
+
+vim.keymap.set("n", "gd", vim.lsp.buf.declaration, get_opts("Go to definition"))
