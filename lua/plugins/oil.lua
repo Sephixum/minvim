@@ -1,10 +1,10 @@
 return {
-  "stevearc/oil.nvim",
-  opts = {},
-  dependencies = { 
-    {
-       "nvim-mini/mini.icons",
-       opts = {}
+    "stevearc/oil.nvim",
+    opts = {},
+    dependencies = {
+        {
+            "nvim-mini/mini.icons",
+            opts = {}
+        },
     },
-  },
 }

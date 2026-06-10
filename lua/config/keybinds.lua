@@ -1,6 +1,6 @@
 ---@param d string
 local function get_opts(d)
-  return { noremap = true, silent = true, desc = d }
+    return { noremap = true, silent = true, desc = d }
 end
 
 vim.keymap.set('n', '<A-u>', '<Cmd>BufferPrevious<CR>', get_opts("Previous Buffer"))
@@ -23,3 +23,5 @@ vim.keymap.set("i", "jk", "<ESC>", get_opts("Window size -"))
 vim.keymap.set("n", "gd", vim.lsp.buf.declaration, get_opts("Go to definition"))
 
 vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, get_opts("Go to definition"))
+
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, get_opts("Go to definition"))
