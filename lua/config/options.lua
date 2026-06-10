@@ -3,13 +3,16 @@ vim.o.number = true
 vim.o.clipboard = "unnamedplus"
 vim.o.relativenumber = true
 vim.o.wrap = false
-vim.o.tabstop = 4
 vim.o.swapfile = false
-vim.o.shiftwidth = 2
-vim.o.expandtab = true
 vim.o.cmdheight = 0
 vim.g.mapleader = " "
 
+vim.opt.expandtab   = true   -- Use spaces instead of tabs
+vim.opt.tabstop     = 4      -- Width of a TAB character
+vim.opt.shiftwidth  = 4      -- Width for autoindent
+vim.opt.smarttab    = true
+vim.opt.autoindent  = true
+vim.opt.smartindent = true
 
 vim.diagnostic.config({
   virtual_text = {
